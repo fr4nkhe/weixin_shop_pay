@@ -116,14 +116,14 @@ type EcommerceApply struct {
 	IDDocType            string                              `json:"id_doc_type"`            // 经营者/法人证件类型
 	IDCardInfo           *EcommerceApplyIDCardInfo           `json:"id_card_info"`           // 经营者/法人身份证信息
 	IDDocInfo            *EcommerceApplyIDDocInfo            `json:"id_doc_info"`            // 经营者/法人其他类型证件信息
-	NeedAccountInfo      bool                                `json:"need_account_info"`      // 是否填写结算银行账户
-	AccountInfo          *EcommerceApplyAccountInfo          `json:"account_info"`           // 结算银行账户
-	ContactInfo          *EcommerceApplyContactInfo          `json:"contact_info"`           // 超级管理员
-	SalesSceneInfo       *EcommerceApplySalesSceneInfo       `json:"sales_scene_info"`       // 店铺信息
-	MerchantShortname    string                              `json:"merchant_shortname"`     // 商户简称
-	Qualifications       string                              `json:"qualifications"`         // 特殊资质
-	BusinessAdditionPics string                              `json:"business_addition_pics"` // 补充材料
-	BusinessAdditionDesc string                              `json:"business_addition_desc"` // 补充说明
+	//NeedAccountInfo      bool                                `json:"need_account_info"`      // 是否填写结算银行账户
+	AccountInfo          *EcommerceApplyAccountInfo    `json:"account_info"`           // 结算银行账户
+	ContactInfo          *EcommerceApplyContactInfo    `json:"contact_info"`           // 超级管理员
+	SalesSceneInfo       *EcommerceApplySalesSceneInfo `json:"sales_scene_info"`       // 店铺信息
+	MerchantShortname    string                        `json:"merchant_shortname"`     // 商户简称
+	Qualifications       string                        `json:"qualifications"`         // 特殊资质
+	BusinessAdditionPics string                        `json:"business_addition_pics"` // 补充材料
+	BusinessAdditionDesc string                        `json:"business_addition_desc"` // 补充说明
 }
 
 // EcommerceApplyBusinessLicenseInfo 二级商户进件-营业执照/登记证书信息
@@ -145,11 +145,12 @@ type EcommerceApplyOrganizationCertInfo struct {
 
 // EcommerceApplyIDCardInfo 二级商户进件-经营者/法人身份证信息
 type EcommerceApplyIDCardInfo struct {
-	IDCardCopy      string `json:"id_card_copy"`       // 身份证人像面照片
-	IDCardNational  string `json:"id_card_national"`   // 身份证国徽面照片
-	IDCardName      string `json:"id_card_name"`       // 身份证姓名
-	IDCardNumber    string `json:"id_card_number"`     // 身份证号码
-	IDCardValidTime string `json:"id_card_valid_time"` // 身份证有效期限
+	IDCardCopy           string `json:"id_card_copy"`             // 身份证人像面照片
+	IDCardNational       string `json:"id_card_national"`         // 身份证国徽面照片
+	IDCardName           string `json:"id_card_name"`             // 身份证姓名
+	IDCardNumber         string `json:"id_card_number"`           // 身份证号码
+	IDCardValidTimeBegin string `json:"id_card_valid_time_begin"` // 身份证有效期限
+	IDCardValidTime      string `json:"id_card_valid_time"`       // 身份证有效期限
 }
 
 // EcommerceApplyIDDocInfo 二级商户进件-经营者/法人其他类型证件信息
@@ -304,7 +305,7 @@ type RefundQueryByRefundNo struct {
 // BalanceSubMch 二级商户余额查询
 type BalanceSubMch struct {
 	SubMchid string `json:"sub_mchid"` // 二级商户号
-	Date string `json:"date"` // 二级商户号
+	Date     string `json:"date"`      // 二级商户号
 }
 
 // BalanceSubMchResp 二级商户余额查询
